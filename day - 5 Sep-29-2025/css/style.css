@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.btn1 {
+    padding: 8px 16px;
+    border-width: 0;
+    background: limegreen;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 800px;
+}
+
+.btn1:hover {
+    background: cornflowerblue;
+}
+
+.para2 {
+    width: 300px;
+    /* border: 1px solid black; */
+    border-width: 10px;
+    border-style: solid;
+    /* border-color: black; */
+    border-image: url("../images/bangladesh.png") 10;
+    padding: 20px;
+    /* margin: 20px; */
+    /* margin-left: auto;
+    margin-right: auto;
+    margin-top: -50px; */
+    /* margin: 20px 30px 40px 50px; */
+    /* margin: 20px 30px; */
+    /* margin: 20px 30px 10px; */
+    color: transparent;
+    letter-spacing: 3px;
+    word-spacing: 6px;
+    text-align: center;
+    /* text-shadow: 1px 1px 1px red; */
+    /* text-transform: uppercase; */
+    font-variant: small-caps;
+    font-family: Arial, Helvetica, sans-serif;
+    /* text-decoration: none; */
+    font-style: italic;
+    font-weight: bolder;
+    background: url("../images/colorBg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-clip: text;
+    background-attachment: fixed;
+}
+
+.bg-fixed {
+    width: 100%;
+    height: 100px;
+    margin: 20px 0;
+    background: url("../images/bangladesh.png");
+    background-size: 100% auto;
+    background-attachment: fixed;
+}
