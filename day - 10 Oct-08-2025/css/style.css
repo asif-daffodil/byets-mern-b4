@@ -1,0 +1,120 @@
+
+/* 01712062236 */
+
+@font-face {
+  font-family: "Poppins-regular";
+  src: url(../fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Poppins-light";
+  src: url(../fonts/Poppins-Light.ttf);
+}
+
+@font-face {
+  font-family: "Poppins-bold";
+  src: url(../fonts/Poppins-Bold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins-regular";
+    box-sizing: border-box;
+    font-style: normal;
+}
+
+
+a, button {
+  font-family: "Poppins-light";  
+}
+
+h1, h2, h3, h4 {
+  font-family: "Poppins-bold";
+}
+
+
+body, p {
+  font-weight: 400;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 30px;
+}
+
+.container > div {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.container > div > div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px 30px;
+}
+
+.container > div > div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container > div > div > h3 {
+    /* font-family: "Lacquer", system-ui; */
+}
+
+
+
+
+.container > div > div > button {
+    border-width: 0;
+    padding: 8px 16px;
+    border-radius: 16px/50%;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    /* font-family: jarina; */
+}
+
+.container img {
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 1100px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+}
+
+@media only screen and (max-width: 768px) and (orientation: portrait)  {
+    .container {
+    grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media only screen and (max-width: 768px) 
+{
+    .container {
+    grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media only screen and (max-width: 768px) and (orientation: landscape)  {
+    .container {
+    grid-template-columns: repeat(3, 1fr);
+}
+}

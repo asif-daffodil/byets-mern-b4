@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.main > div {
+    width: 200px;
+    height: 200px;
+    background: dodgerblue;
+    transition: 0.5s;
+}
+
+.main > div:first-child:hover{
+    /* transform: translate(30px); */
+    /* transform: translateX(30px); */
+    /* transform: translateY(30px); */
+    /* transform: translateX(30px) translateY(30px); */
+    transform: translate(30px, 30px);
+}
+
+.main > div:nth-child(2):hover{
+    /* transform: scale(80%); */
+    transform: scale(0.8);
+}
+
+.main > div:nth-child(3):hover{
+    /* transform: skew(20deg); */
+    /* transform: skewX(20deg); */
+    /* transform: skewY(20deg); */
+    /* transform: skewX(20deg) skewY(20deg); */
+    transform: skew(20deg, 20deg);
+}
+
+.main > div:nth-child(4):hover{
+    /* transform: rotate(180deg); */
+    /* transform: rotateX(180deg); */
+    /* transform: rotateY(180deg); */
+    /* transform: rotateZ(180deg); */
+    transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);
+}
+
+
+.pain {
+    width: 100%;
+    position: relative;
+}
+
+.pain >  div {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    /* animation: jekonoNaam 5s infinite linear; */
+    animation-name: jekonoNaam;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 48px;
+}
+
+@keyframes jekonoNaam {
+    0% {
+        left: 20px;
+        background: orangered;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        left: calc(100% - 220px);
+        background: limegreen;
+        transform: rotate(360deg);
+    }
+
+    100% {
+        left: 20px;
+        background: orangered;
+        transform: rotate(0deg);
+    }
+}
+
+.gol {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 240px auto 20px;
+    animation: golla 1s infinite;
+}
+
+@keyframes golla {
+    0%{
+        background: red;
+        box-shadow: 0 0 5px orangered;
+    }
+    50%{
+        background: darkred;
+        box-shadow: 0 0 30px orangered;
+    }
+    100%{
+        background: red;
+        box-shadow: 0 0 5px orangered;
+    }
+}

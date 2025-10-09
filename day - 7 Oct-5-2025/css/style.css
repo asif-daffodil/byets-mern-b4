@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 20px;
+}
+
+.main > div {
+    border: 1px solid black;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    gap: 10px;
+}
+
+.main > div > img {
+    width: 80%;
+    border-radius: 50%;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.main > div > p {
+    text-align: center;
+}
+
+.main > div > button {
+    padding: 8px 16px;
+    border-width: 0;
+    background: black;
+    color: white;
+    border-radius: 16px/50%;
+    cursor: pointer;
+}
+
+.pain {
+    width: 300px;
+    height: 200px;
+    background: green;
+    border: 1px solid black;
+    margin: 20px auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.pain > div {
+    width: 150px;
+    height: 150px;
+    background: red;
+    border-radius: 50%;
+}
+
+.pain:hover {
+    background: white;
+}
+
+.bel {
+    width: 300px;
+    height: 200px;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 20px auto;
+}
+
+.bel > div:first-child {
+    background: black;
+}
+
+.bel > div:nth-child(2) {
+    background: yellow;
+}
+
+.bel > div:last-child {
+    background: red;
+}
+
+.bel:hover > div:first-child {
+    background: darkblue;
+}
+
+.bel:hover > div:nth-child(2) {
+    background: white;
+}
+
+.bel:hover > div:last-child {
+    background: maroon;
+}
+
+.rain {
+    width: 100%;
+    height: 100vh;
+    background: lightgray;
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    grid-template-areas: 
+    "area1 area1 area6 area3" 
+    "area4 area5 area5 area3"
+    "area4 area5 area5 area2";
+}
+
+.rain > div {
+    background: gray;
+    display: grid;
+    place-items: center;
+    font-size: 36px;
+    text-shadow: 2px 2px 2px #000;
+    color: white;
+}
+
+.rain > div:nth-child(1) {
+    grid-area: area1;
+}
+.rain > div:nth-child(2) {
+    grid-area: area2;
+}
+.rain > div:nth-child(3) {
+    grid-area: area3;
+}
+.rain > div:nth-child(4) {
+    grid-area: area4;
+}
+.rain > div:nth-child(5) {
+    grid-area: area5;
+}
+.rain > div:nth-child(6) {
+    grid-area: area6;
+}
+
+.parent {
+    width: 100%;
+    min-height: 100vh;
+    background: limegreen;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    /* align-items: center; */
+}
+
+.chield {
+    width: 200px;
+    height: 200px;
+    background: skyblue;
+}

@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$headingColor : #f33;
+@mixin headingStyle ($fs: 36px, $lh: 48px, $fst: normal) {
+    color: $headingColor;
+    font-size: $fs;
+    font-weight: 600;
+    line-height: $lh;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    font-variant: small-caps;
+    font-style: $fst;
+}
+
+.heading1 {
+    @include headingStyle(36px, 48px, italic);
+    background: yellow;
+}
+
+.heading2 {
+    @include headingStyle(28px, 40px, normal);
+}
+
+.heading3 {
+    @include headingStyle();
+}
+
+.heading4 {
+    @extend .heading1;
+    background: lightblue;
+}
+
+.abul {
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    animation: abul 2s infinite linear;
+
+    >.mofiz {
+        width: 200px;
+        height: 200px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        animation: mofiz 2s infinite linear;
+
+        >.modon {
+            width: 100px;
+            height: 100px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            animation: modon 2s infinite linear;
+
+            >.bolod {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                animation: bolod 2s infinite linear;
+
+                &:hover {
+                    background: red;
+                }
+            }
+        }
+    }
+}
+
+@keyframes abul {
+    0% {
+        background: green;
+    }
+    50% {
+        background: red;
+    }
+    100% {
+        background: green;
+    }
+}
+@keyframes mofiz {
+    0% {
+        background: limegreen;
+    }
+    50% {
+        background: pink;
+    }
+    100% {
+        background: limegreen;
+    }
+}
+@keyframes modon {
+    0% {
+        background: lightgreen;
+    }
+    50% {
+        background: lightcoral;
+    }
+    100% {
+        background: lightgreen;
+    }
+}
+@keyframes bolod {
+    0% {
+        background: white;
+    }
+    50% {
+        background: hotpink;
+    }
+    100% {
+        background: white;
+    }
+}
