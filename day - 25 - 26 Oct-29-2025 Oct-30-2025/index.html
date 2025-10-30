@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="myForm">
+        <input type="text" placeholder="Your Name" name="name">
+        <div class="err errName"></div>
+        <input type="email" placeholder="Your Email" name="email">
+        <div class="err errEmail"></div>
+        <input type="password" placeholder="Your Password" name="pass">
+        <div class="err errPass"></div>
+        <input type="password" placeholder="Confirm Password" name="cPass">
+        <div class="err errCpass"></div>
+        Gender :
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female
+        <div class="err errGender"></div>
+        Skills :
+        <input type="checkbox" name="skills" value="HTML">HTML
+        <input type="checkbox" name="skills" value="CSS">CSS
+        <input type="checkbox" name="skills" value="JS">JS
+        <input type="checkbox" name="skills" value="React.js">React.js
+        <input type="checkbox" name="skills" value="Node.js">Node.js
+        <input type="checkbox" name="skills" value="Express.js">Express.js
+        <input type="checkbox" name="skills" value="MongoDB">MongoDB
+        <div class="err errSkill"></div>
+        <select name="country" id="countries">
+            <option value="">--Select Country--</option>
+        </select>
+        <div class="err errCountry"></div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
