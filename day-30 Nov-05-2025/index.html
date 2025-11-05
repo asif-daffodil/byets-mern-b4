@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <div class="container min-h-screen mx-auto grid place-items-center">
+        <div class="w-96 md:w-1/2 border p-4 rounded shadow">
+            <form action="" id="taskForm" class="flex w-full">
+                <input type="text" placeholder="Task" class="rounded-l border border-r-0 px-4 grow focus:outline-none" name="task">
+                <button type="submit" class="border px-6 py-3 rounded-r cursor-pointer hover:bg-black hover:text-white hover:border-black">Add Task</button>
+            </form>
+            <div class="text-sm text-red-600 mb-3" id="errMsg"></div>
+            <ul id="showtask" class="grid gap-2 *:even:bg-gray-200 *:p-2 *:flex *:justify-between *:items-center *:gap-4 *:hover:bg-gray-200">
+            </ul>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
