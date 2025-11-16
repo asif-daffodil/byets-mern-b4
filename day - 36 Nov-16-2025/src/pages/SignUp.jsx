@@ -1,3 +1,4 @@
+import { useForm } from "react-hook-form";
 
 const SignUp = () => {
     const countryListAllIsoData = [
@@ -252,42 +253,109 @@ const SignUp = () => {
         { "code": "AX", "code3": "ALA", "name": "Åland Islands", "number": "248" }
     ];
 
+    const { register, handleSubmit, formState: { errors }, reset, watch } = useForm();
+
+    const onSubmit = data => {
+        console.log(data);
+        reset();
+    };
+
     return (
         <div className="container mx-auto py-5">
             <div className="my-5 mx-auto w-[600px] border rounded p-5">
                 <h1 className="text-4xl mb-5">Sign Up</h1>
-                <div className="mb-3">
-                    <input type="text" placeholder="Your name" name="yname" className="border border-stone-400 rounded p-2 w-full" />
-                </div>
-                <div className="mb-3">
-                    <input type="text" placeholder="Your email" name="email" className="border border-stone-400 rounded p-2 w-full" />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="" className="mr-3">Gender : </label>
-                    <label htmlFor="male" className="mr-3">
-                        <input type="radio" value="Male" name="gender" id="male" className="" /> Male
-                    </label>
-                    <label htmlFor="female">
-                        <input type="radio" value="Female" name="gender" id="female" className="" /> Female
-                    </label>
-                </div>
-                <div className="mb-3">
-                    <select name="country" id="" className="border border-stone-400 rounded p-2 w-full">
-                        <option value="">--Select Country--</option>
-                        {countryListAllIsoData.map(country => (
-                            <option key={country.code} value={country.name}>{country.name}</option>
-                        ))}
-                    </select>
-                </div>
-                <div className="mb-3">
-                    <input type="password" placeholder="Your password" name="password" className="border border-stone-400 rounded p-2 w-full" />
-                </div>
-                <div className="mb-3">
-                    <input type="password" placeholder="Confirm password" name="cpassword" className="border border-stone-400 rounded p-2 w-full" />
-                </div>
-                <div>
-                    <button className="bg-blue-500 text-white px-4 py-2 rounded">Sign Up</button>
-                </div>
+                <form action="" onSubmit={handleSubmit(onSubmit)}>
+                    <div className="mb-3">
+                        <input type="text" placeholder="Your name" {...register("yname", {
+                            required: {
+                                value: true,
+                                message: "Name is required"
+                            },
+                            minLength: {
+                                value: 3,
+                                message: "Name must be at least 3 characters"
+                            },
+                            pattern: {
+                                value: /^[A-Za-z.-\s]+$/,
+                                message: "Invalid name format"
+                            }
+                        })} className="border border-stone-400 rounded p-2 w-full" />
+                        {errors.yname && <p className="text-red-500">{errors.yname.message}</p>}
+                    </div>
+                    <div className="mb-3">
+                        <input type="text" placeholder="Your email" {...register("email", {
+                            required: {
+                                value: true,
+                                message: "Email is required"
+                            },
+                            pattern: {
+                                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                                message: "Invalid email address"
+                            }
+                        })} className="border border-stone-400 rounded p-2 w-full" />
+                        {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="" className="mr-3">Gender : </label>
+                        <label htmlFor="male" className="mr-3">
+                            <input type="radio" value="Male" {...register("gender", {
+                                required: {
+                                    value: true,
+                                    message: "Gender is required"
+                                },
+                            })} id="male" className="" /> Male
+                        </label>
+                        <label htmlFor="female">
+                            <input type="radio" value="Female" {...register("gender", {
+                                required: {
+                                    value: true,
+                                    message: "Gender is required"
+                                },
+                            })} id="female" className="" /> Female
+                        </label>
+                        {errors.gender && <p className="text-red-500">{errors.gender.message}</p>}
+                    </div>
+                    <div className="mb-3">
+                        <select {...register("country", {
+                            required: {
+                                value: true,
+                                message: "Country is required"
+                            }
+                        })} id="" className="border border-stone-400 rounded p-2 w-full">
+                            <option value="">--Select Country--</option>
+                            {countryListAllIsoData.map(country => (
+                                <option key={country.code} value={country.name}>{country.name}</option>
+                            ))}
+                        </select>
+                        {errors.country && <p className="text-red-500">{errors.country.message}</p>}
+                    </div>
+                    <div className="mb-3">
+                        <input type="password" placeholder="Your password" {...register("password", {
+                            required: {
+                                value: true,
+                                message: "Password is required"
+                            },
+                            pattern: {
+                                value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+                                message: "Password must be at least 8 characters, include uppercase, lowercase, number and special character"
+                            }
+                        })} className="border border-stone-400 rounded p-2 w-full" />
+                        {errors.password && <p className="text-red-500">{errors.password.message}</p>}
+                    </div>
+                    <div className="mb-3">
+                        <input type="password" placeholder="Confirm password" {...register("cpassword", {
+                            required: {
+                                value: true,
+                                message: "Confirm password is required"
+                            },
+                            validate: value => value === watch('password') || "Passwords do not match"
+                        })} className="border border-stone-400 rounded p-2 w-full" />
+                        {errors.cpassword && <p className="text-red-500">{errors.cpassword.message}</p>}
+                    </div>
+                    <div>
+                        <button className="bg-blue-500 text-white px-4 py-2 rounded" type="submit">Sign Up</button>
+                    </div>
+                </form>
             </div>
         </div>
     );
